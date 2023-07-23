@@ -6,30 +6,11 @@ This repo contains the deliverable for a backend solution exposing the requested
 - The daily national estimate for the FCS prevalence from the 1st of June 2022 to the 1st of July 2023
 (metric B) and its variance
 
-## Used tech stack
+### Used tech stack
 
 I used an AWS lambda function for the backend implementation. The choice of using a serverless approach, instead of using a server and backend python API development using  e.g. Flask API, relies on choosing to leverage the Serverless computation as it is cost saving, and easily scalable.
 The backend service is available at the following endpoint: https://byyp3wv7otj6cmoxmksgwz5bze0pocum.lambda-url.eu-central-1.on.aws/
-The endpoint returns a JSON object of the requested metrics as follows:
----
-{
-    "COL": {
-    "metric_a": [
-        "average": {
-            "2022-6": {"people": 790956.53,"prevalence": 0.12},
-            ...
-        }],
-    }
-    "metric_b": {
-        "2022-06-01": {"people": 5712364,"prevalence": 0.11,"variance": 0.01}
-        ...
-    },
-    "BFA": {
-        "metric_a": [...],
-        "metric_b": {...}
-    }
-}
----
+The endpoint returns a JSON object of the requested metrics for Colombia and Burkina Faso:
 
 ### Deployment
 The deployment of the code is automized and the used CI/CD approach is shown in the above figure
